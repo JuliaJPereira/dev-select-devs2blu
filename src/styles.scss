@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+//fonte
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+//Tirando a margin do corpo, para não ficar as bordas brancas
+*{
+  margin:0;
+  font-family: 'Roboto', sans-serif;
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
