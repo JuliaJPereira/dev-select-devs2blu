@@ -1,28 +1,20 @@
-<div class="main-login">
+<div class="main-select">
 
     <div class="left-page">
-        <div class="card-login">
+        <div class="card-select">
             <h1>DevSelect</h1>
-            <h2>Área do Candidato</h2>
-            <div class="textfield">
-                <label for="user">E-mail</label>
-                <input type="text" name="user" placeholder="email@email.com">
+            <div class="select-profile">
+                <a routerLink="/candidato">Área do Candidato</a>                
             </div>
-            <div class="textfield">
-                <label for="user">Senha</label>
-                <input type="passsword" name="password" placeholder="Senha">
+            <div class="select-profile">
+                <a href="">Área do Recrutador</a>
             </div>
-            <button class="button-login">ENTRAR</button>
         </div>
     </div>
 
     <div class="right-page">
-        <div class="img-moon">
-            <a routerLink="/logind">
-                <img src="/assets/_img/lua.png" alt="moon">
-            </a>
-        </div>
-        <h1>DevSelect<br>Insira uma frase de efeito aqui!</h1>
+        <h1>DevSelect<br></h1>
+        <h4>SELECT * FROM devs WHERE tech-lover = true;</h4>
         <img class="img-study" src="/assets/_img/study.svg" class="img-login" alt="hand-coding">
     </div>
 </div>

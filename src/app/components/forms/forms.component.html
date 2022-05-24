@@ -1,3 +1,13 @@
+<app-navbar></app-navbar>
+
+<div *ngIf= "okInsert" class= "container mt-3">
+    <div class="row">
+       <div class="alert alert-success" role="alert">
+         Candidato<b> {{formPessoa.idPessoa}} - {{formPessoa.nomePessoa}}</b> cadastrado com sucesso!
+      </div>
+    </div>
+</div>
+
 <form class="container">
     <div class="row">
         <div class="col">
@@ -6,21 +16,20 @@
             <div class="form-group col-12 mt-4">
                 <label for="exampleInputEmail1">Nome Completo</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Nome Completo"
-                    placeholder="Nome Completo">
+                    placeholder="Nome Completo" [(ngModel)]="formPessoa.nomePessoa">
             </div>
 
             <!-- Campo do E-mail -->
             <div class="form-group col-12 mt-4">
                 <label for="exampleInputEmail1">E-mail</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="E-mail"
-                    placeholder="E-mail">
+                    placeholder="E-mail" [(ngModel)]="formPessoa.emailPessoa">
             </div>
 
             <!-- Campo do genero  -->
             <div class="form-group col-12 mt-4">
                 <label for="exampleInputEmail1">Genero</label>
-                <select class="form-control" name="genero" aria-describedby="Genero">
-                    <option value="">Selecione o genero...(demonstrativo por enquanto)</option>
+                <select class="form-control" name="genero" aria-describedby="Genero" [(ngModel)]="formPessoa.generoPessoa">
                     <option value="">Masculino</option>
                     <option value="">Feminino</option>
                     <option value="">Não Binário</option>
@@ -33,12 +42,12 @@
                 <div class="col-6">
                     <label for="exampleInputEmail1">CPF</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="cpf"
-                        placeholder="CPF">
+                        placeholder="CPF" [(ngModel)]="formPessoa.cpfPessoa">
                 </div>
                 <div class="col-6">
                     <label for="exampleInputEmail1">RG</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="rg"
-                        placeholder="RG">
+                        placeholder="RG" [(ngModel)]="formPessoa.rgPessoa">
                 </div>
             </div>
 
@@ -46,18 +55,13 @@
             <div class="form-group mt-4 col-12 row">
                 <div class="col-6">
                     <label for="exampleInputEmail1">Idade</label>
-                    <select class="form-control" name="idade" aria-describedby="Idade">
-                        <option value="">Selecione sua idade...(demonstrativo por enquanto também)</option>
-                        <option value="">16 anos</option>
-                        <option value="">17 anos</option>
-                        <option value="">18 anos</option>
-                        <option value="">19 anos</option>
-                    </select>
+                    <input type="text" class="form-control" id="exampleInputIdade" name="idadePessoa" [(ngModel)]="formPessoa.idadePessoa">
                 </div>
+
                 <div class="col-6">
                     <label for="exampleInputEmail1">Celular</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Celular"
-                        placeholder="Celular">
+                        placeholder="Celular" [(ngModel)]="formPessoa.telefonePessoa">
                 </div>
             </div>
 
@@ -66,7 +70,7 @@
                 <div class="col-6">
                     <label for="exampleInputEmail1">CEP</label>
                     <input type="text" class="form-control" name="cep" (blur)="getViaCEP($event)"
-                        aria-describedby="CEP (00000-000)" placeholder="CEP">
+                        aria-describedby="CEP (00000-000)" placeholder="CEP" [(ngModel)]="formPessoa.enderecoPessoa!.cepPessoa">
                     <a class="busca-cep" href="https://buscacepinter.correios.com.br/app/endereco/index.php"
                         target="_blank">Não sei meu CEP, como saber?</a>
                 </div>
@@ -75,31 +79,22 @@
                 <!-- Aqui vai ter uma DIV que vai esconder o cidade também -->
                 <div class="col-6" *ngIf="showForm | async">
                     <label for="exampleInputEmail1">Estado / UF</label>
-                    <input type="text" class="form-control" name="uf" aria-describedby="Estado" placeholder="Estado" [(ngModel)]="formCadastro.uf">
+                    <input type="text" class="form-control" name="uf" aria-describedby="Estado" placeholder="Estado" [(ngModel)]="formPessoa.enderecoPessoa!.estadoPessoa">
                 </div>
 
-
-                <!-- <div class="col-6" *ngIf="showForm | async">
-                <label for="exampleInputEmail1">Estado / UF</label>
-                <select class="form-control" name="uf" aria-describedby="Estado">
-                    <option *ngfor="let uf of formCadastro" [value]="formCadastro.uf">{{formCadastro.uf}}</option>
-                </select>
-        </div> -->
-
             </div>
-
 
             <div *ngIf="showForm | async">
                 <div class="form-group mt-2 col-12 row">
                     <div class="col-9">
                         <label for="exampleInputEmail1">Endereço</label>
-                        <input type="text" class="form-control" name="rua" aria-describedby="Idade"
-                            placeholder="Endereço" [(ngModel)]="formCadastro.logradouro">
+                        <input type="text" class="form-control" name="logradouroPessoa" aria-describedby="logradouroPessoa"
+                            placeholder="Endereço" [(ngModel)]="formPessoa.enderecoPessoa!.logradouroPessoa">
                     </div>
                     <div class="col-3">
                         <label for="exampleInputEmail1">Numero</label>
-                        <input type="text" class="form-control" name="numero" aria-describedby="Numero"
-                            placeholder="Numero" [(ngModel)]="formCadastro.numero">
+                        <input type="text" class="form-control" name="numeroPessoa" aria-describedby="numero"
+                            placeholder="Numero" [(ngModel)]="formPessoa.enderecoPessoa!.numeroPessoa">
                     </div>
                 </div>
 
@@ -108,17 +103,53 @@
                 <div class="form-group col-12 mt-4">
                     <label for="exampleInputEmail1">Cidade</label>
                     <input type="email" class="form-control" name="cidade" aria-describedby="Cidade"
-                        placeholder="Cidade" [(ngModel)]="formCadastro.uf">
+                        placeholder="Cidade" [(ngModel)]="formPessoa.enderecoPessoa!.cidadePessoa">
                 </div>
 
                 <div class="form-group col-12 mt-4">
                     <label for="exampleInputEmail1">Bairro</label>
                     <input type="email" class="form-control" name="bairro" aria-describedby="Bairro"
-                        placeholder="Bairro" [(ngModel)]="formCadastro.bairro">
+                        placeholder="Bairro" [(ngModel)]="formPessoa.enderecoPessoa!.bairroPessoa">
                 </div>
 
 
                 <div class="Aqui vai ser feito o quadro de soft skills">
+
+                    <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <h3>SOFT SKILLS</h3>
+                            <div class="container-soft-skills">
+                              <button
+                                type="button"
+                                *ngFor="let softSkill of arraySoftSkills"
+                                class="btn btn-skills {{this.getSoftSkillStyle(softSkill.id)}}"
+                                (click)="this.onClickSoftSkill(softSkill.id)"
+                              >
+                                {{ softSkill.descricao }}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <h3>HARD SKILLS</h3>
+                            <div class="container-soft-skills">
+                              <button
+                                type="button"
+                                *ngFor="let hardSkill of arrayHardSkills"
+                                class="btn btn-skills {{this.getHardSkillStyle(hardSkill.id)}}"
+                                (click)="this.onClickHardSkill(hardSkill.id)"
+                              >
+                                {{ hardSkill.descricao }}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
                 </div>
 
@@ -129,7 +160,7 @@
 
             <div class="col-lg-4 offset-lg-4 text-center mb-4 mt-5">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-secondary btn-lg" disabled>Cadastre-se</button>
+                    <button (click)="addPessoa()" type="submit" class="btn btn-register mr-3">Cadastre-se</button>
                 </div>
             </div>
 
@@ -137,3 +168,6 @@
         </div>
     </div>
 </form>
+
+
+<app-footer></app-footer>

@@ -12,7 +12,7 @@ footer{
 
 .up-footer{
     width: 100vw;
-    height: 4vh;
+    height: 3vh;
     color: white;
     display: flex;
     align-items: center;
@@ -20,15 +20,20 @@ footer{
     justify-content: center;
 }
 
+.up-footer > h5{
+    margin-top: 25px;
+}
+
 .down-footer{
     width:100vw;
-    height: 26vh;
+    height: 36%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     text-align: center;
     color: white;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .social > a {
@@ -38,19 +43,23 @@ footer{
     justify-content: center;
     align-items: center;
     text-align: center;
+
 }
 
 .social > p {
-    margin-right: 20px;
+    margin: 0;
+    // margin-left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    text-align: center;
+    margin-left: 20px;
 }
 
 .social > a > img {
     width: 30px;
-    
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .social > img {
@@ -59,8 +68,9 @@ footer{
 
 .social{
     display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    // justify-content: center;
+    // align-items: center;
     color: white;
+    margin-left: 40px;
 }

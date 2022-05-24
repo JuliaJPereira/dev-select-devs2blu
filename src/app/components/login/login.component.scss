@@ -1,4 +1,4 @@
-.main-login{
+.main-select{
     width: 100vw;
     height: 100vh;
     background-image: linear-gradient(to right, #C4CFF5, #97BDF5,#3E82E8);
@@ -19,24 +19,18 @@
 }
 
 .right-page > h1{
-    font-size: 2vw;
     color: white;
+    font-weight: 800;
+    margin: 0;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
-.img-moon{
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-.img-moon > img{
-    width: 34px;
-}
-
-.img-moon > img:hover{
-    opacity: 60%;
+.right-page > h4{
+    color: white;
+    font-weight: 800;
+    margin: 0;
+    margin: 20px;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -56,7 +50,7 @@
   align-items: center;
 }
 
-.card-login{
+.card-select{
     width: 60%;
     display: flex;
     justify-content: center;
@@ -68,69 +62,38 @@
     box-shadow: 0px 10px 40px #00000056;
 }
 
-.card-login > h1{
+.card-select > h1{
     color: white;
     font-weight: 800;
     margin: 0;
-    margin-top: 40px;
+    margin: 20px;
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
-.card-login > h2{
-    color:white;
-    font-weight: 800;
-    margin: 0;
-    margin-bottom: 40px;
-    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-}
-
-.textfield{
+.select-profile{
     width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
-.textfield > input{
+.select-profile > a {
     width: 100%;
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    background: #C4CFF5;
-    font-size: 12pt;
-    outline: none;
-    box-sizing: border-box;
-}
-
-
-.textfield > label{
+    margin: 5%;
+    background-color: #C4CFF5;
     color: white;
-    margin-bottom: 10px;
-}
-
-.textfield > input::placeholder{
-    color: #3E82E8;
-}
-
-.button-login{
-    width: 100%;
-    padding: 16px 0px;
-    margin: 25px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 10px 0px;
+    font-size: 18px;
     border: none;
     border-radius: 8px;
-    outline: none;
-    text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #3E82E8;
-    background-color: white;
-    cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #659aeb;
+    box-shadow: 0px 10px 40px -12px #3E82E8;
 }
-
-
 
 //Responsividade
 @media only screen and (max-width: 950px){
